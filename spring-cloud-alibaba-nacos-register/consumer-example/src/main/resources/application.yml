@@ -1,0 +1,11 @@
+server:
+  port: 8444
+
+spring:
+  application:
+    name: consumer
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://10.60.80.115:8848
