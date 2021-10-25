@@ -1,0 +1,23 @@
+server:
+  port: 8446
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://10.60.80.115:8848
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: feign
+          uri: lb://feign
+          predicates:
+            - Path=/**
+logging:
+  level:
+    com.zsy.gateway: debug
